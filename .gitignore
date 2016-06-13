@@ -1,0 +1,6 @@
+/api/.idea
+/api/vendor
+
+/front/.idea
+/front/node_modules
+/front/bower_components
