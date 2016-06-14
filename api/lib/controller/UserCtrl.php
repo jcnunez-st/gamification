@@ -47,6 +47,7 @@ class UserController
             $userJson->lastName = $currentRow[1];
             $badge = new Badge($currentRow[2], $currentRow[3]);
             array_push($badges, $badge);
+            $userJson->badges = $badges;
             $userJson->coins = $currentRow[4];
             array_push($userJsonArray, $userJson);
          } else {
