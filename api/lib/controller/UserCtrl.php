@@ -45,6 +45,7 @@ class UserController
             $badges = array();
             $userJson->name = $currentRow[0];
             $userJson->lastName = $currentRow[1];
+            $userJson->photo = $this->generateUserPhotoName($userJson->name, $userJson->lastName);
             $badge = new Badge($currentRow[2], $currentRow[3]);
             array_push($badges, $badge);
             $userJson->badges = $badges;
@@ -59,5 +60,13 @@ class UserController
          }
       }
       return $userJsonArray;
+   }
+
+   private function generateUserPhotoName($name, $lastName)
+   {
+      $userPhotoName = strtolower(substr($name, 0, 1) . $lastName . '.jpg');
+      $userPhotoName = iconv('ISO-8859-1', 'ASCII//TRANSLIT', $userPhotoName);
+
+      return $userPhotoName;
    }
 }
