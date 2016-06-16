@@ -1,0 +1,22 @@
+{
+  "name": "gamfication-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower": "node node_modules\\bower\\bin\\bower",
+    "live": "node node_modules\\live-server\\live-server.js",
+    "build-css": "node-sass --include-path scss sass/main.scss   public/styles/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "live-server": "1.0.0",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "vulcanize": "^1.14.8"
+  }
+}

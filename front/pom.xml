@@ -1,0 +1,144 @@
+<!--
+
+    Copyright (C) 2015 Stratio (http://stratio.com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.stratio.gamification</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+
+
+    <artifactId>web</artifactId>
+
+    <name>Stratio Gamificationb</name>
+
+    <properties>
+        <nodeVer>v0.12.2</nodeVer>
+        <npmVer>2.7.4</npmVer>
+        <nodeURL>http://tools.stratio.com/buildtools</nodeURL>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/main/js</sourceDirectory>
+        <testSourceDirectory>src/test/js</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>0.0.26</version>
+                <configuration>
+                    <skipTests>${skipUTs}</skipTests>
+                    <nodeVersion>${nodeVer}</nodeVersion>
+                    <npmVersion>${npmVer}</npmVersion>
+                    <nodeDownloadRoot>${nodeURL}/node/</nodeDownloadRoot>
+                    <npmDownloadRoot>${nodeURL}/npm/2.7.4/</npmDownloadRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                    <execution>
+                        <id>npm configure proxy</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <arguments>config set registry http://sodio.stratio.com/nexus/content/repositories/npmjs/
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <arguments>install --production --no-optional</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>bower install</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <executable>bower</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*.jar</exclude>
+                    </excludes>
+                    <includes>
+                        <include>front/**/*.*</include>
+                    </includes>
+                    <classesDirectory>target/classes</classesDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>devweb</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>0.0.26</version>
+                        <executions>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <phase>generate-sources</phase>
+                                <configuration>
+                                    <arguments>install --no-optional</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>grunt-serve</id>
+                                <goals>
+                                    <goal>grunt</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>serve</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

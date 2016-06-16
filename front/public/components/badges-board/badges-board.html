@@ -1,0 +1,100 @@
+<dom-module id="badges-board">
+    <link rel="import" type="css" href="badges-board.css">
+    <template>
+        <iron-ajax
+                auto
+                url="[[backendUrl]]"
+                handle-as="json"
+                on-response="handleResponse"
+                debounce-duration="300">
+        </iron-ajax>
+
+        <div id="boardHeaderWrap">
+            <ul id="boardHeader" class="badgesIconItems badges_types_icon">
+                <template is="dom-repeat" items="{{categories}}" as="category">
+                    <li id="[[generateClass(category)]]" class="[[generateClass(category)]]">
+                        <div class="iconWrap">
+                            <strong>[[category]]</strong>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <div id="boardBadgeRow">
+            <template is="dom-repeat" items="{{badgesboard.levels}}" as="level">
+                <div class="boardBadgeRowItem">
+                    <div class="rowTitle badgesIconItems">
+                        <div id="[[level]]" class="[[level]]">
+                            <div class="iconWrap">
+                                <strong>[[level]]</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listWrap">
+                        <ul class="boardBadgeRowItemList">
+                            <template is="dom-repeat" items="{{categories}}" as="category">
+
+                                <li id="[[category]]" class$="boardBadgeRowTypes [[category]]">
+                                    <template is="dom-repeat" items="{{getUsersInLevelAndCategory(level,category)}}"
+                                              as="user">
+
+                                        <div class$="[[level]] user" on-mouseover="onHoveredUser" on-mouseout="onUnhovered">
+                                            <img class="profilePic"
+                                                 src="https://www.paradigmadigital.com/profilePics/[[user.userName]].jpg">
+                                            <p class="microName">
+                                                <span class="db">[[user.name]] </span>
+                                                <span class="db">[[user.lastName]]</span>
+                                            </p>
+
+                                            <user-card user="[[user]]" class="hidden"></user-card>
+
+                                        </div>
+
+                                    </template>
+
+                                </li>
+
+
+                            </template>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </template>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'badges-board',
+            properties: {
+                backendUrl: String,
+                users: {type: Array, value: []}
+            },
+
+            ready: function() {
+
+            },
+            handleResponse: function(response) {
+                this.badgesboard = response.detail.response;
+                this.categories = this.badgesboard.categories;
+            },
+            getPosition: function(index) {
+                return index + 1;
+            },
+            generateClass: function(name) {
+                return name.toLowerCase();
+            },
+            getUsersInLevelAndCategory(level, category){
+                return this.badgesboard[level][category];
+            },
+            onHoveredUser: function(event) {
+                var userCard =  Polymer.dom(event.model._nodes[3]);
+                userCard.classList.remove('hidden');
+            },
+            onUnhovered: function(event) {
+                Polymer.dom(event.model._nodes[3]).classList.add('hidden');
+            }
+        });
+    </script>
+</dom-module>
