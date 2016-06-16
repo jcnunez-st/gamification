@@ -1,0 +1,208 @@
+<dom-module id="page-legend">
+    <link rel="import" type="css" href="page-legend.css">
+    <template>
+        <div class="legend">
+            <div id="pageLegendContent" class="legendContent hide">
+                <div class="insideContent">
+                    <h1>Welcome to the War Games</h1>
+                    <p>En War Games tenemos dos objetivos fundamentales: aprovechar el talento y potenciar la presencia
+                        de Paradigma Digital en los medios sociales. El conocimiento de los empleados se canaliza a
+                        través de seminarios, formaciones, meetups, organización de eventos, posts, etc. Por otra parte,
+                        se comparte en el blog corporativo y redes sociales todo el material formativo con el fin de
+                        posicionar a la empresa y a los propios empleados, quienes son los principales protagonistas de
+                        este juego interno.</p>
+
+                    <h3>Ranking de Badges</h3>
+                    <p>De menor a mayor importancia ... y muchos más están por llegar.</p>
+                    <ul id="leyendBadges" class="badges badgesIconItems badges_types_characters">
+
+                        <li class="king">
+                            <div class="iconWrap">
+
+                                <strong>King</strong>
+
+                            </div>
+
+                        </li>
+
+                        <li class="hoplite">
+                            <div class="iconWrap">
+
+                                <strong>Hoplite</strong>
+
+                            </div>
+
+                        </li>
+
+                        <li class="strategist">
+                            <div class="iconWrap">
+
+                                <strong>Strategist</strong>
+
+                            </div>
+
+                        </li>
+
+                        <li class="demigod">
+                            <div class="iconWrap">
+
+                                <strong>Demigod</strong>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+                    <h3>Badges Types</h3>
+                    <p>
+                        Dependiendo de las actividades que lleven a cabo los jugadores, las insignias que se le otorguen
+                        serán diferentes:
+                    </p>
+                    <ul id="leyendBadgesTypes" class="badges badgesIconItems badges_types badges_types_icon clearfix">
+
+
+                        <li class="social_booster">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Social Booster</strong>
+                                <p>Interacciones en redes sociales. Retuits y favoritos en Twitter y recomendaciones en
+                                    LinkedIn. Por cada 5 interacciones (shares) se obtiene un punto.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="headhunter">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Headhunter</strong>
+                                <p>Premia la captación de talento para la empresa a través de la presentación de
+                                    candidatos a entrevistas laborales (10 puntos) e incorporaciones a la plantilla (100
+                                    puntos).</p>
+                            </div>
+
+                        </li>
+
+                        <li class="plogger">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Plogger</strong>
+                                <p>Insignia que se le otorga a todos los participantes que publiquen contenido relevante
+                                    en el blog corporativo de Paradigma. Por cada post publicado se obtienen 50
+                                    puntos.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="teammate">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Teammate</strong>
+                                <p>Se premia el compañerismo y el buen hacer dentro de la empresa a través de los Kudos
+                                    conseguidos. Por cada Kudo se obtienen 50 puntos.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="scholar">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Scholar</strong>
+                                <p>Reconocimiento que se otorga a los participantes que obtengan certificaciones
+                                    relacionadas con su puesto laboral buscando así el prestigio de los propios
+                                    empleados. Por cada certificación se obtienen 50 puntos.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="evangelist">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Evangelist</strong>
+                                <p>Reconocimiento a los participantes que intervengan con una charla en un evento
+                                    externo (200 puntos), en una formación (50 puntos) o en una meetup (100 puntos)
+                                    generando así presencia de marca y compartiendo conocimiento.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="force">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Force</strong>
+                                <p>Recompensa por la sumatoria de todo el tráfico que acumulan todos los posts de un
+                                    mismo autor. Se le asigna icono, no puntos.</p>
+                            </div>
+
+                        </li>
+
+                        <li class="player">
+                            <div class="iconWrap">
+
+                            </div>
+
+                            <div class="desc">
+                                <strong>Player</strong>
+                                <p>Premia a los participantes que organicen un evento lúdico (100 puntos) que fomente la
+                                    participación del resto de los empleados de la empresa.</p>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <button class="toggleLegend" on-click="toggleLegend">view legend</button>
+
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-legend',
+            properties: {
+                user: Object
+            },
+
+            ready: function() {
+                this.showLegend = false;
+                this.badges = [{level: "king", categories: [], label:"King"}, {
+                    level: "hoplite",
+                    categories: [],
+                    label: "Hoplite"
+                }, {level: "strategist", categories: [], label: "Strategist"}, {level: "demigod", categories: [],   label: "Demigod"}];
+
+            },
+            toggleLegend: function(event) {
+                this.showLegend = !this.showLegend;
+                var legendPanel = this.$.pageLegendContent;
+                if (this.showLegend) {
+                    legendPanel.classList.remove('hide');
+                    legendPanel.classList.add('show');
+                } else {
+                    legendPanel.classList.remove('show');
+                    legendPanel.classList.add('hide');
+                }
+            }
+        });
+    </script>
+</dom-module>

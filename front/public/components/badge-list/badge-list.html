@@ -1,0 +1,30 @@
+<dom-module id="badge-list">
+    <link rel="import" type="css" href="badge-list.css">
+    <template>
+        <ul class="badges badgesList">
+            <template is="dom-repeat" items="{{badges}}" as="badge">
+                <li class$="[[generateClass(badge.level)]]" title="[[badge.level]]">
+                    <template is="dom-repeat" items="{{badge.categories}}" as="category">
+                        <span class$="badgeType [[generateClass(category)]]" title="[[category]]"></span>
+                    </template>
+                </li>
+            </template>
+        </ul>
+    </template>
+    <script>
+        Polymer({
+            is: 'badge-list',
+            properties: {
+                badges: Array
+            },
+
+            ready: function() {
+
+            },
+            generateClass: function(name) {
+                return name.toLowerCase();
+            }
+
+        });
+    </script>
+</dom-module>

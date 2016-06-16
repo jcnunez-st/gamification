@@ -1,0 +1,79 @@
+<dom-module id="app-gamification">
+    <template>
+
+        <app-location route="{{route}}" use-hash-as-path></app-location>
+
+        <app-route
+                route="{{route}}"
+                pattern="/:page"
+                data="{{data}}"
+                tail="{{tail}}"
+                active="{{activePage}}">
+        </app-route>
+
+        <div class="container">
+
+            <div class="row nm">
+                <div class="g-12 column nbp">
+                    <h2 on-mouseover="playSound" sound-name='harpSound' class="appLogo">War Games Board</h2>
+                    <page-tabs current-page-id="{{data.page}}" tabs="{{tabs}}"
+                               hidden$="{{!showTabSwitcher}}"></page-tabs>
+                    <page-legend></page-legend>
+                </div>
+            </div>
+            <iron-pages attr-for-selected="id" selected="{{data.page}}">
+                <home-page id="home"></home-page>
+                <!-- PENDING TO CREATE BACK URL VAR -->
+                <leader-board id="leaderboard" backend-url='http://10.10.0.22:9090/leaderboard'></leader-board>
+                <badges-board id="badgesboard" backend-url='http://10.10.0.22:9090/badgesboard'></badges-board>
+            </iron-pages>
+        </div>
+        <audio id="harpSound" controls preload="auto" class="hidden">
+            <source src="../../audio/harp.mp3" controls/>
+            <source src="../../audio/harp.ogg" controls/>
+        </audio>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'app-gamification',
+            behaviors: [SoundPlayer],
+            properties: {tabs: Array, showTabSwitcher: Boolean},
+            observers: [
+                '_onRoutePathChanged(route.path)'
+            ],
+            ready: function() {
+                this.tabs = [{id: "leaderboard", href: "/#/leaderboard", label: "Leaderboard"}, {
+                    id: "badgesboard",
+                    href: "/#/badgesboard",
+                    label: "Badgesboard"
+                }];
+
+                this.showTabSwitcher = false;
+            },
+            _isInvalidRoute: function() {
+                var valid = false;
+                var i = 0;
+                if (this.tabs) {
+                    while (!valid && i < this.tabs.length) {
+
+                        if (this.data.page == this.tabs[i].id) {
+                            valid = true;
+                        }
+
+                        ++i;
+                    }
+                }
+
+                return !valid;
+            },
+            _onRoutePathChanged: function(path) {
+                if (!path || this._isInvalidRoute()) {
+                    this.set('route.path', '/home');
+                }
+                this.showTabSwitcher = (this.route.path != "/home");
+            }
+
+        });
+    </script>
+</dom-module>

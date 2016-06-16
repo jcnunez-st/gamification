@@ -1,0 +1,64 @@
+<dom-module id="page-tabs">
+    <link rel="import" type="css" href="page-tabs.css">
+    <template>
+        <div class="layoutMode">
+            <template is="dom-repeat" items="{{tabs}}" as="tab">
+                <content id="tabPanel">
+                    <a href="[[tab.href]]" class="layoutBtn layoutBtn list" on-click="onClickTab">[[tab.label]]</a>
+                </content>
+            </template>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-tabs',
+            properties: {
+                tabs: Array,
+                currentPageId: String
+            },
+            observers: [
+                '_currentPageIdChanged(currentPageId)'
+            ],
+            ready: function() {
+            },
+            attached:function(){
+                this.async(function() {
+                    if (this.tabs) {
+                        this.activeCurrentPage();
+                    }
+                })
+            },
+            _currentPageIdChanged: function() {
+                this.async(function() {
+                    if (this.tabs) {
+                        this.activeCurrentPage();
+                    }
+                })
+            },
+            onClickTab: function(event) {
+                this._setActiveTab(event.srcElement);
+            },
+            _setActiveTab: function(tab){
+                var activeTab = Polymer.dom(this.root).querySelector('a.active');
+                if (activeTab) {
+                    activeTab.classList.remove('active');
+                }
+                Polymer.dom(tab).classList.add('active');
+            },
+            activeCurrentPage: function() {
+                var found = false;
+                var i = 0;
+                while (!found && i < this.tabs.length) {
+                    if (this.tabs[i].id == this.currentPageId) {
+                        found = true;
+                        var tabPanel = Polymer.dom(this.root).querySelector('.layoutMode');
+                        this._setActiveTab(Polymer.dom(tabPanel).node.children[i]);
+                    } else {
+                        ++i;
+                    }
+                }
+            }
+
+        });
+    </script>
+</dom-module>

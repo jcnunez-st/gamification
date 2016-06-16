@@ -1,0 +1,66 @@
+ul.badgesList {
+    margin: 0;
+    white-space: nowrap; }
+ul.badgesList li {
+    display: inline-block;
+    text-indent: -9000px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #000 url("../../img/badges.png") no-repeat 0 0;
+    background-size: 500px; }
+ul.badgesList li[class^="hoplite"] {
+    background-color: transparent;
+    background-position: 0 0; }
+ul.badgesList li[class^="strategist"] {
+    background-color: transparent;
+    background-position: -50px 0; }
+ul.badgesList li[class^="king"] {
+    background-color: transparent;
+    background-position: -100px; }
+ul.badgesList li[class^="demigod"] {
+    background-color: transparent;
+    background-position: -157px; }
+ul.badgesList li[class^="aphrodite"] {
+    background-color: transparent;
+    background-position: -157px; }
+ul.badgesList li .badgeType {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    background: url("../../img/badges_types_2.png") no-repeat 0 0;
+    background-size: 176px;
+    opacity: .7; }
+
+ul.badgesList li .badgeType.apostle {
+    background-position: 0 0; }
+ul.badgesList li .badgeType.mentor {
+    top: 8px;
+    right: -4px;
+    background-position: -22px 0; }
+ul.badgesList li .badgeType.philantropist {
+    top: 24px;
+    right: -10px;
+    background-position: -45px 0; }
+ul.badgesList li .badgeType.typographist {
+    top: 37px;
+    right: 3px;
+    background-position: -61px 0; }
+ul.badgesList li .badgeType.academic {
+    top: 24px;
+    right: 32px;
+    background-position: -87px 0; }
+ul.badgesList li .badgeType.pedagogue {
+    top: 6px;
+    right: 30px;
+    background-position: -109px 0; }
+ul.badgesList li .badgeType.periscoper {
+    top: -9px;
+    right: 19px;
+    background-position: -131px 0; }
+ul.badgesList li .badgeType.athlete {
+    top: -6px;
+    right: 5px;
+    background-position: -153px 0; }

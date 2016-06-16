@@ -1,0 +1,27 @@
+<dom-module id="user-card">
+    <link rel="import" type="css" href="user-card.css">
+    <template>
+        <div class="extraInfo">
+
+            <img class="profilePic" src="/photos/[[user.photo]]">
+            <div class="cardInfo">
+                <p class="fullName ellipsis">[[user.name]] [[user.lastName]]</p>
+                <span class="points">[[user.coins]]</span>
+                <badge-list badges=[[user.badges]]></badge-list>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'user-card',
+            properties: {
+                user: Object
+            },
+
+            ready: function() {
+
+            }
+
+        });
+    </script>
+</dom-module>
