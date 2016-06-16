@@ -1,20 +1,27 @@
 
 #boardHeaderWrap {
     margin-left: 100px;
-    font-family: sans-serif; }
+    font-family: sans-serif;
+}
 
 .badgesIconItems {
     margin: 0;
-    padding: 0 0 20px 0; }
+    padding: 0 0 20px 0;
+}
+
 .badgesIconItems > * {
     display: inline-block;
     line-height: 50px;
     font-size: 12px;
     font-family: 'Open Sans';
-    text-shadow: 1px 1px 3px rgba(228, 92, 55, 0); }
+    text-shadow: 1px 1px 3px rgba(228, 92, 55, 0);
+}
+
 .badgesIconItems > * .iconWrap {
     width: 50px;
-    float: left; }
+    float: left;
+}
+
 .badgesIconItems > * .iconWrap:before {
     content: " ";
     display: block;
@@ -24,71 +31,115 @@
     background-size: 500px;
     margin-right: 10px;
     zoom: 1.6;
-    margin: 0 auto; }
+    margin: 0 auto;
+}
+
 .badgesIconItems > *[id$="hoplite"] .iconWrap:before {
-    background-position: 0 0; }
+    background-position: 0 0;
+}
+
 .badgesIconItems > *[id$="strategist"] .iconWrap:before {
-    background-position: -53px 0; }
+    background-position: -53px 0;
+}
+
 .badgesIconItems > *[id$="king"] .iconWrap:before {
-    background-position: -104px; }
+    background-position: -104px;
+}
+
 .badgesIconItems > *[id$="demigod"] .iconWrap:before {
-    background-position: -157px; }
+    background-position: -157px;
+}
+
 .badgesIconItems > *[id$="aphrodite"] .iconWrap:before {
-    background-position: -218px; }
+    background-position: -218px;
+}
+
 .badgesIconItems > * strong {
     display: block;
     line-height: 1em;
     text-align: center;
-    font-weight: normal; }
+    font-weight: normal;
+}
+
 .badgesIconItems > * p {
-    margin: 0; }
+    margin: 0;
+}
+
 .badgesIconItems > * .desc {
     margin-left: 60px;
-    margin-right: 20px; }
+    margin-right: 20px;
+}
+
 .badgesIconItems > * .desc strong {
     font-size: 18px;
     font-weight: bold;
     text-align: left;
-    display: block; }
+    display: block;
+}
+
 .badgesIconItems > * .desc p {
     font-size: 15px;
     line-height: 1.2em;
-    opacity: .7; }
+    opacity: .7;
+}
+
 .badgesIconItems.badges_types_characters > * .iconWrap {
-    width: 100px; }
+    width: 100px;
+}
 
 .badges_types_icon > * {
     /*width: 33%;*/
     float: left;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+}
+
 .badges_types_icon > *:nth-child(3n+1) {
-    clear: both; }
+    clear: both;
+}
+
 .badges_types_icon > * .iconWrap:before {
-    background-image: url("../../img/badges_types.png");
+    background-image: url("../../img/badges_types_gray.png");
     background-size: 275px;
     width: 32px;
-    height: 32px; }
+    height: 32px;
+}
+
 .badges_types_icon > *[id^="apostle"] .iconWrap:before {
-    background-position: 0 0; }
+    background-position: 0 0;
+}
+
 .badges_types_icon > *[id^="mentor"] .iconWrap:before {
-    background-position: -35px 0; }
+    background-position: -35px 0;
+}
+
 .badges_types_icon > *[id^="philantropist"] .iconWrap:before {
-    background-position: -69px 0; }
+    background-position: -69px 0;
+}
+
 .badges_types_icon > *[id^="typographist"] .iconWrap:before {
-    background-position: -99px 0; }
+    background-position: -99px 0;
+}
+
 .badges_types_icon > *[id^="academic"] .iconWrap:before {
-    background-position: -136px 0; }
+    background-position: -136px 0;
+}
+
 .badges_types_icon > *[id^="pedagogue"] .iconWrap:before {
-    background-position: -170px 0; }
+    background-position: -170px 0;
+}
+
 .badges_types_icon > *[id^="periscoper"] .iconWrap:before {
-    background-position: -205px 0; }
+    background-position: -205px 0;
+}
+
 .badges_types_icon > *[id^="athlete"] .iconWrap:before {
-    background-position: -242px 0; }
+    background-position: -242px 0;
+}
 
 #boardHeaderWrap {
     margin-left: 100px;
-    font-family: sans-serif; }
-
+    font-family: sans-serif;
+}
 
 #boardHeader {
     display: flex;
@@ -96,69 +147,100 @@
     justify-content: space-between;
     padding: 0;
     margin-bottom: 20px;
-    width: 100%; }
+    width: 100%;
+}
+
 #boardHeader li {
     flex: 1;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+}
+
 #boardHeader .iconWrap {
     float: none;
     margin: 0 auto;
-    width: 70px; }
+    width: 70px;
+}
 
 .boardBadgeRowItem {
     font-family: sans-serif;
     clear: both;
-    border-top: solid 1px rgba(0, 0, 0, 0.3); }
+    border-top: solid 1px rgba(0, 0, 0, 0.3);
+}
+
 .boardBadgeRowItem .rowTitle {
     width: 100px;
     float: left;
-    padding: 10px; }
+    padding: 10px;
+}
 
 .ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    display: block; }
+    display: block;
+}
 
 #boardBadgeRow {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.3); }
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+}
+
 #boardBadgeRow .badgesIconItems .iconWrap {
-    width: auto; }
+    width: auto;
+}
+
 #boardBadgeRow .boardBadgeRowItem .listWrap {
     margin-left: 110px;
-    border-left: solid 1px rgba(0, 0, 0, 0.3); }
+    border-left: solid 1px rgba(0, 0, 0, 0.3);
+}
+
 #boardBadgeRow .boardBadgeRowItem .boardBadgeRowItemList {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin: 0;
-    min-height: 140px; }
+    min-height: 140px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .boardBadgeRowItemList > li {
     flex: 1;
     border-right: solid 1px rgba(0, 0, 0, 0.4);
-    padding: 5px 0 20px 5px; }
+    padding: 5px 0 20px 5px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .profilePic {
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0);
     width: 39px;
-    height: 39px; }
+    height: 39px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo {
-    min-width: 300px; }
+    min-width: 300px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .profilePic {
     width: 75px;
     height: 75px;
     float: left;
-    margin: 10px; }
+    margin: 10px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .cardInfo {
     margin-left: 100px;
-    padding-top: 5px; }
+    padding-top: 5px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .cardInfo p {
-    margin: 0; }
+    margin: 0;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .cardInfo .fullName {
     padding-right: 10px;
     font-family: 'Open Sans';
-    text-transform: uppercase; }
+    text-transform: uppercase;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .cardInfo .points {
     line-height: 1em;
     font-family: 'lithosproblack';
@@ -173,22 +255,37 @@
     border-radius: 0 0 10px 10px;
     background: #424140;
     border: solid 1px rgba(0, 0, 0, 0.3);
-    border-top-width: 0; }
+    border-top-width: 0;
+}
+
 #boardBadgeRow .boardBadgeRowItem .extraInfo .cardInfo .badges {
-    margin-right: 15px; }
+    margin-right: 15px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .user {
     position: relative;
     float: left;
-    width: 25%; }
+    width: 25%;
+}
+
 @media (max-width: 1920px) {
     #boardBadgeRow .boardBadgeRowItem .user {
-        width: 33%; } }
+        width: 33%;
+    }
+}
+
 @media (max-width: 1500px) {
     #boardBadgeRow .boardBadgeRowItem .user {
-        width: 50%; } }
+        width: 50%;
+    }
+}
+
 @media (max-width: 1000px) {
     #boardBadgeRow .boardBadgeRowItem .user {
-        width: 100%; } }
+        width: 100%;
+    }
+}
+
 #boardBadgeRow .boardBadgeRowItem .user .microName {
     font-size: 10px;
     display: block;
@@ -196,12 +293,18 @@
     margin-bottom: 3px;
     height: 2em;
     overflow: hidden;
-    text-align: center; }
+    text-align: center;
+}
+
 #boardBadgeRow .boardBadgeRowItem .user .microName > * {
-    line-height: 1em; }
+    line-height: 1em;
+}
+
 #boardBadgeRow .boardBadgeRowItem .user > .profilePic {
     margin: 5px auto 3px;
-    display: block; }
+    display: block;
+}
+
 #boardBadgeRow .boardBadgeRowItem .user:hover .extraInfo {
     display: block;
     position: absolute;
@@ -211,10 +314,19 @@
     background: #424140;
     border: solid 1px rgba(0, 0, 0, 0.3);
     color: #fff;
-    border-radius: 46px 10px 0 46px; }
+    border-radius: 46px 10px 0 46px;
+}
+
 #boardBadgeRow .boardBadgeRowItem .boardBadgeRowTypes.force .extraInfo, #boardBadgeRow .boardBadgeRowItem .boardBadgeRowTypes.teammate .extraInfo, #boardBadgeRow .boardBadgeRowItem .boardBadgeRowTypes.share .extraInfo {
     left: auto;
-    right: 40px; }
+    right: 40px;
+}
+
 #boardBadgeRow .boardBadgeRowItem:last-child .boardBadgeRowTypes .extraInfo {
     top: auto;
-    bottom: 40px; }
+    bottom: 40px;
+}
+
+.user {
+    cursor: pointer;
+}

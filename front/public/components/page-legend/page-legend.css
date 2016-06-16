@@ -1,293 +1,3 @@
-/*.legend {*/
-    /*font-family: 'Droid Sans', sans-serif;*/
-    /*letter-spacing: 0;*/
-    /*position: absolute;*/
-    /*z-index: 9;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*width: 100%;*/
-/*}*/
-
-/*.legend .legendContent {*/
-    /*border: solid 2px #44d5dd;*/
-    /*border-width: 0 0 2px 0;*/
-    /*background-color: #002932;*/
-    /*box-shadow: 0 0 90px 10px black;*/
-    /*position: relative;*/
-    /*z-index: 1;*/
-/*}*/
-
-/*.legend .toggleLegend {*/
-    /*float: right;*/
-    /*font-size: 14px;*/
-    /*border: solid 2px #44d5dd;*/
-    /*border-width: 0 2px 2px 0;*/
-    /*background-color: #002932;*/
-    /*border-radius: 0 0 3px 0;*/
-    /*margin-right: 20px;*/
-    /*padding: 3px 10px 3px 3px;*/
-    /*position: relative;*/
-    /*height: 39px;*/
-    /*z-index: 3;*/
-    /*top: -4px;*/
-/*}*/
-
-/*.legend button {*/
-    /*color: #fff;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*.legend .toggleLegend:after {*/
-    /*border-right: 41px solid #002932;*/
-    /*left: -41px;*/
-    /*top: -3px;*/
-    /*z-index: 2;*/
-/*}*/
-
-/*.legend .toggleLegend:before, .legend .toggleLegend:after {*/
-    /*content: " ";*/
-    /*display: block;*/
-    /*position: absolute;*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*border-bottom: 39px solid transparent;*/
-    /*top: 0px;*/
-/*}*/
-
-/*.legend .toggleLegend:before {*/
-    /*border-right: 40px solid #44d5dd;*/
-    /*left: -40px;*/
-    /*z-index: 1;*/
-/*}*/
-
-/*.legend {*/
-    /*font-family: 'Droid Sans', sans-serif;*/
-    /*letter-spacing: 0;*/
-    /*position: absolute;*/
-    /*z-index: 9;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*width: 100%;*/
-/*}*/
-
-/*.legend button {*/
-    /*color: #fff;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*.legend button:hover {*/
-    /*text-decoration: underline;*/
-/*}*/
-
-/*.legend button:focus {*/
-    /*outline: 0;*/
-/*}*/
-
-/*.legend .toggleLegend:before, .legend .toggleLegend:after {*/
-    /*content: " ";*/
-    /*display: block;*/
-    /*position: absolute;*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*border-bottom: 39px solid transparent;*/
-    /*top: 0px;*/
-/*}*/
-
-/*.legend .toggleLegend:after {*/
-    /*border-right: 41px solid #002932;*/
-    /*left: -41px;*/
-    /*top: -3px;*/
-    /*z-index: 2;*/
-/*}*/
-
-/*.legend .toggleLegend:before {*/
-    /*border-right: 40px solid #44d5dd;*/
-    /*left: -40px;*/
-    /*z-index: 1;*/
-/*}*/
-
-/*.legend .legendContent {*/
-    /*border: solid 2px #44d5dd;*/
-    /*border-width: 0 0 2px 0;*/
-    /*background-color: #002932;*/
-    /*box-shadow: 0 0 90px 10px black;*/
-    /*position: relative;*/
-    /*z-index: 1;*/
-/*}*/
-
-/*.legend .legendContent h1 {*/
-    /*font-size: 25px;*/
-    /*color: #fff;*/
-    /*margin-top: 0;*/
-    /*margin-bottom: 5px;*/
-    /*padding-top: 20px;*/
-/*}*/
-
-/*.legend .legendContent h3 {*/
-    /*font-size: 19px;*/
-    /*color: #fff;*/
-    /*margin-bottom: 3px;*/
-/*}*/
-
-/*.legend .legendContent p {*/
-    /*font-size: 16px;*/
-    /*opacity: .7;*/
-/*}*/
-
-/*.legend .insideContent {*/
-    /*padding: 0 20px;*/
-/*}*/
-
-/*.badgesIconItems {*/
-    /*margin: 0;*/
-    /*padding: 0 0 20px 0;*/
-/*}*/
-
-/*.badgesIconItems > * {*/
-    /*display: inline-block;*/
-    /*line-height: 50px;*/
-    /*font-size: 12px;*/
-    /*font-family: 'Droid Sans';*/
-    /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);*/
-/*}*/
-
-/*.badgesIconItems > * .iconWrap {*/
-    /*width: 50px;*/
-    /*float: left;*/
-/*}*/
-
-/*.badgesIconItems > * .iconWrap:before {*/
-    /*content: " ";*/
-    /*display: block;*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*background: url("../../img/badges.png") no-repeat 0 0;*/
-    /*background-size: 500px;*/
-    /*margin-right: 10px;*/
-    /*zoom: 1.6;*/
-    /*margin: 0 auto;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="anakin"] .iconWrap:before {*/
-    /*background-position: 0 0;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="r2d2"] .iconWrap:before {*/
-    /*background-position: -53px 0;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="stormtrooper"] .iconWrap:before {*/
-    /*background-position: -104px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="chewbacca"] .iconWrap:before {*/
-    /*background-position: -157px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="han_solo"] .iconWrap:before {*/
-    /*background-position: -209px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="skywalker"] .iconWrap:before {*/
-    /*background-position: -260px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="windu"] .iconWrap:before {*/
-    /*background-position: -314px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="darth_vather"] .iconWrap:before {*/
-    /*background-position: -369px;*/
-/*}*/
-
-/*.badgesIconItems > *[class$="yoda"] .iconWrap:before {*/
-    /*background-position: -423px;*/
-/*}*/
-
-/*.badgesIconItems > * strong {*/
-    /*display: block;*/
-    /*line-height: 1em;*/
-    /*text-align: center;*/
-    /*font-weight: normal;*/
-/*}*/
-
-/*.badgesIconItems > * p {*/
-    /*margin: 0;*/
-/*}*/
-
-/*.badgesIconItems > * .desc {*/
-    /*margin-left: 60px;*/
-    /*margin-right: 20px;*/
-/*}*/
-
-/*.badgesIconItems > * .desc strong {*/
-    /*font-size: 18px;*/
-    /*font-weight: bold;*/
-    /*text-align: left;*/
-    /*display: block;*/
-/*}*/
-
-/*.badgesIconItems > * .desc p {*/
-    /*font-size: 15px;*/
-    /*line-height: 1.2em;*/
-    /*opacity: .7;*/
-/*}*/
-
-/*.badgesIconItems.badges_types_characters > * .iconWrap {*/
-    /*width: 100px;*/
-/*}*/
-
-/*.badges_types_icon > * {*/
-    /*width: 33%;*/
-    /*float: left;*/
-    /*margin-bottom: 20px;*/
-/*}*/
-
-/*.badges_types_icon > *:nth-child(3n+1) {*/
-    /*clear: both;*/
-/*}*/
-
-/*.badges_types_icon > * .iconWrap:before {*/
-    /*background-image: url("../../img/badges_types.png");*/
-    /*background-size: 275px;*/
-    /*width: 32px;*/
-    /*height: 32px;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="social_booster"] .iconWrap:before {*/
-    /*background-position: 0 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="headhunter"] .iconWrap:before {*/
-    /*background-position: -35px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="teammate"] .iconWrap:before {*/
-    /*background-position: -69px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="plogger"] .iconWrap:before {*/
-    /*background-position: -99px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="scholar"] .iconWrap:before {*/
-    /*background-position: -136px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="evangelist"] .iconWrap:before {*/
-    /*background-position: -170px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="force"] .iconWrap:before {*/
-    /*background-position: -205px 0;*/
-/*}*/
-
-/*.badges_types_icon > *[class^="player"] .iconWrap:before {*/
-    /*background-position: -242px 0;*/
-/*}*/
-
-
-
 .legend {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 0;
@@ -295,17 +5,22 @@
     z-index: 9;
     top: 0;
     right: 0;
-    width: 100%; }
+    width: 100%;
+}
+
 .legend button {
     color: #424140;
-    text-decoration: none; }
+    text-decoration: none;
+}
 
 .legend button:focus {
     outline: 0;
 }
 
 .legend button:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+}
+
 .legend .toggleLegend {
     float: right;
     font-size: 14px;
@@ -318,7 +33,10 @@
     position: relative;
     height: 39px;
     z-index: 3;
-    top: -4px; }
+    top: -4px;
+    line-height: 1.4em;
+}
+
 .legend .toggleLegend:before, .legend .toggleLegend:after {
     content: " ";
     display: block;
@@ -326,51 +44,72 @@
     width: 0;
     height: 0;
     border-bottom: 39px solid transparent;
-    top: 0px; }
+    top: 0px;
+}
+
 .legend .toggleLegend:after {
     border-right: 41px solid #d8d8d8;
     left: -41px;
     top: -3px;
-    z-index: 2; }
+    z-index: 2;
+}
+
 .legend .toggleLegend:before {
     border-right: 40px solid #424140;
     left: -40px;
-    z-index: 1; }
+    z-index: 1;
+}
+
 .legend .legendContent {
     border: solid 2px #424140;
     border-width: 0 0 2px 0;
-    background-color: #d8d8d8 ;
+    background-color: #d8d8d8;
     box-shadow: 0 0 90px 10px black;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+}
+
 .legend .legendContent h1 {
     font-size: 25px;
     color: #424140;
     margin-top: 0;
     margin-bottom: 5px;
-    padding-top: 20px; }
+    padding-top: 20px;
+}
+
 .legend .legendContent h3 {
     font-size: 19px;
     color: #424140;
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+}
+
 .legend .legendContent p {
     font-size: 16px;
-    opacity: .7; }
+    opacity: .7;
+}
+
 .legend .insideContent {
-    padding: 0 20px; }
+    padding: 0 20px;
+}
 
 .badgesIconItems {
     margin: 0;
-    padding: 0 0 20px 0; }
+    padding: 0 0 20px 0;
+}
+
 .badgesIconItems > * {
     display: inline-block;
     line-height: 50px;
     font-size: 12px;
     font-family: 'Open Sans';
-    text-shadow: 1px 1px 3px rgba(228, 92, 55, 0); }
+    text-shadow: 1px 1px 3px rgba(228, 92, 55, 0);
+}
+
 .badgesIconItems > * .iconWrap {
     width: 50px;
-    float: left; }
+    float: left;
+}
+
 .badgesIconItems > * .iconWrap:before {
     content: " ";
     display: block;
@@ -380,69 +119,110 @@
     background-size: 500px;
     margin-right: 10px;
     zoom: 1.6;
-    margin: 0 auto; }
+    margin: 0 auto;
+}
+
 .badgesIconItems > *[class^="hoplite"] .iconWrap:before {
-    background-position: 0 0; }
+    background-position: 0 0;
+}
+
 .badgesIconItems > *[class^="strategist"] .iconWrap:before {
-    background-position: -53px 0; }
+    background-position: -53px 0;
+}
+
 .badgesIconItems > *[class^="king"] .iconWrap:before {
-    background-position: -104px; }
+    background-position: -104px;
+}
+
 .badgesIconItems > *[class^="demigod"] .iconWrap:before {
-    background-position: -157px; }
+    background-position: -157px;
+}
+
 .badgesIconItems > *[class^="aphrodite"] .iconWrap:before {
-    background-position: -218px; }
+    background-position: -218px;
+}
+
 .badgesIconItems > * strong {
     display: block;
     line-height: 1em;
     text-align: center;
-    font-weight: normal; }
+    font-weight: normal;
+}
+
 .badgesIconItems > * p {
-    margin: 0; }
+    margin: 0;
+}
+
 .badgesIconItems > * .desc {
     margin-left: 60px;
-    margin-right: 20px; }
+    margin-right: 20px;
+}
+
 .badgesIconItems > * .desc strong {
     font-size: 18px;
     font-weight: bold;
     text-align: left;
-    display: block; }
+    display: block;
+}
+
 .badgesIconItems > * .desc p {
     font-size: 15px;
     line-height: 1.2em;
-    opacity: .7; }
+    opacity: .7;
+}
+
 .badgesIconItems.badges_types_characters > * .iconWrap {
-    width: 100px; }
-
-
+    width: 100px;
+}
 
 .badges_types_icon > * {
     width: 33%;
     float: left;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+}
+
 .badges_types_icon > *:nth-child(3n+1) {
-    clear: both; }
+    clear: both;
+}
+
 .badges_types_icon > * .iconWrap:before {
-    background-image: url("../../img/badges_types.png");
+    background-image: url("../../img/badges_types_gray.png");
     background-size: 275px;
     width: 32px;
-    height: 32px; }
-.badges_types_icon > *[class^="social_booster"] .iconWrap:before {
-    background-position: 0 0; }
-.badges_types_icon > *[class^="headhunter"] .iconWrap:before {
-    background-position: -35px 0; }
-.badges_types_icon > *[class^="teammate"] .iconWrap:before {
-    background-position: -69px 0; }
-.badges_types_icon > *[class^="plogger"] .iconWrap:before {
-    background-position: -99px 0; }
-.badges_types_icon > *[class^="scholar"] .iconWrap:before {
-    background-position: -136px 0; }
-.badges_types_icon > *[class^="evangelist"] .iconWrap:before {
-    background-position: -170px 0; }
-.badges_types_icon > *[class^="force"] .iconWrap:before {
-    background-position: -205px 0; }
-.badges_types_icon > *[class^="player"] .iconWrap:before {
-    background-position: -242px 0; }
+    height: 32px;
+}
 
+.badges_types_icon > *[class^="social_booster"] .iconWrap:before {
+    background-position: 0 0;
+}
+
+.badges_types_icon > *[class^="headhunter"] .iconWrap:before {
+    background-position: -35px 0;
+}
+
+.badges_types_icon > *[class^="teammate"] .iconWrap:before {
+    background-position: -69px 0;
+}
+
+.badges_types_icon > *[class^="plogger"] .iconWrap:before {
+    background-position: -99px 0;
+}
+
+.badges_types_icon > *[class^="scholar"] .iconWrap:before {
+    background-position: -136px 0;
+}
+
+.badges_types_icon > *[class^="evangelist"] .iconWrap:before {
+    background-position: -170px 0;
+}
+
+.badges_types_icon > *[class^="force"] .iconWrap:before {
+    background-position: -205px 0;
+}
+
+.badges_types_icon > *[class^="player"] .iconWrap:before {
+    background-position: -242px 0;
+}
 
 #pageLegendContent {
     overflow: hidden;

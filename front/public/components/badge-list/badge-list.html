@@ -5,7 +5,7 @@
             <template is="dom-repeat" items="{{badges}}" as="badge">
                 <li class$="[[generateClass(badge.level)]]" title="[[badge.level]]">
                     <template is="dom-repeat" items="{{badge.categories}}" as="category">
-                        <span class$="badgeType [[generateClass(category)]]" title="[[category]]"></span>
+                        <span class$="badgeType [[generateClass(category)]] [[iconColor]]" title="[[category]]"></span>
                     </template>
                 </li>
             </template>
@@ -15,7 +15,8 @@
         Polymer({
             is: 'badge-list',
             properties: {
-                badges: Array
+                badges: Array,
+                iconColor: {type: String, value: 'gray'}
             },
 
             ready: function() {

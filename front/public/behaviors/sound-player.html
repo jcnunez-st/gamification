@@ -1,8 +1,10 @@
 <script>
     SoundPlayer = {
-        playSound:function(event){
+        playSound: function (event) {
             var soundName = event.target.getAttribute('sound-name');
-            this.$[soundName].play();
+            if (soundName) {
+                this.$[soundName].play();
+            }
         }
 
     };

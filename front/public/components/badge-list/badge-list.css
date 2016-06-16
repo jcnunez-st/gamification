@@ -30,9 +30,17 @@ ul.badgesList li .badgeType {
     position: absolute;
     top: -6px;
     right: 0;
-    background: url("../../img/badges_types_2.png") no-repeat 0 0;
     background-size: 176px;
-    opacity: .7; }
+    opacity: .7;
+}
+
+.badgeType.orange{
+    background: url("../../img/badges_types_orange.png") no-repeat 0 0;
+}
+
+.badgeType.gray{
+    background: url("../../img/badges_types_gray.png") no-repeat 0 0;
+}
 
 ul.badgesList li .badgeType.apostle {
     background-position: 0 0; }

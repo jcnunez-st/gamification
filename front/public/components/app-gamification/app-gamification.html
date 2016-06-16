@@ -1,4 +1,5 @@
 <dom-module id="app-gamification">
+    <link rel="import" type="css" href="app-gamification.css">
     <template>
 
         <app-location route="{{route}}" use-hash-as-path></app-location>
@@ -15,7 +16,8 @@
 
             <div class="row nm">
                 <div class="g-12 column nbp">
-                    <h2 on-mouseover="playSound" sound-name='harpSound' class="appLogo">War Games Board</h2>
+                    <h2 class="appLogo">      <a href="/#/home" on-mouseover="playSound" sound-name='harpSound'>War Games
+                        Board</a></h2>
                     <page-tabs current-page-id="{{data.page}}" tabs="{{tabs}}"
                                hidden$="{{!showTabSwitcher}}"></page-tabs>
                     <page-legend></page-legend>
@@ -24,8 +26,8 @@
             <iron-pages attr-for-selected="id" selected="{{data.page}}">
                 <home-page id="home"></home-page>
                 <!-- PENDING TO CREATE BACK URL VAR -->
-                <leader-board id="leaderboard" backend-url='http://10.10.0.22:9090/leaderboard'></leader-board>
-                <badges-board id="badgesboard" backend-url='http://10.10.0.22:9090/badgesboard'></badges-board>
+                <leader-board id="leaderboard" backend-url='http://172.19.1.67:9090/leaderboard'></leader-board>
+                <badges-board id="badgesboard" backend-url='http://172.19.1.67:9090/badgesboard'></badges-board>
             </iron-pages>
         </div>
         <audio id="harpSound" controls preload="auto" class="hidden">
@@ -42,7 +44,7 @@
             observers: [
                 '_onRoutePathChanged(route.path)'
             ],
-            ready: function() {
+            ready: function () {
                 this.tabs = [{id: "leaderboard", href: "/#/leaderboard", label: "Leaderboard"}, {
                     id: "badgesboard",
                     href: "/#/badgesboard",
@@ -51,7 +53,7 @@
 
                 this.showTabSwitcher = false;
             },
-            _isInvalidRoute: function() {
+            _isInvalidRoute: function () {
                 var valid = false;
                 var i = 0;
                 if (this.tabs) {
@@ -67,7 +69,7 @@
 
                 return !valid;
             },
-            _onRoutePathChanged: function(path) {
+            _onRoutePathChanged: function (path) {
                 if (!path || this._isInvalidRoute()) {
                     this.set('route.path', '/home');
                 }

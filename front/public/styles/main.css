@@ -670,10 +670,10 @@ h4, h5, h6 {
   font-size: 1.5rem; }
 
 a {
-  color: #ff8f0b; }
+  color: #37b5e4; }
 
 a:hover {
-  color: #ff8f0b; }
+  color: #37b5e4; }
 
 p {
   margin: 0 0 1em 0; }
@@ -895,12 +895,12 @@ table tbody tr td {
   padding-right: 1em; }
 
 .pagination .active a, .pagination .active a:hover {
-  background-color: #ff8f0b;
+  background-color: #37b5e4;
   color: #fff;
   cursor: default; }
 
 .pagination li:hover a {
-  background-color: #ff8f0b;
+  background-color: #37b5e4;
   color: #fff; }
 
 .pagination .unavailable a {
@@ -1079,7 +1079,7 @@ input[disabled], select[disabled], textarea[disabled] {
 /*= FORMS & BUTTONS */
 .bt {
   display: inline-block;
-  background-color: #ff8f0b;
+  background-color: #37b5e4;
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -1091,7 +1091,7 @@ input[disabled], select[disabled], textarea[disabled] {
   /* button sizes ---------- */ }
 
 .bt:hover {
-  background-color: #ff8f0b;
+  background-color: #37b5e4;
   color: #fff; }
 
 .bt.nm {
@@ -1397,89 +1397,3 @@ h2 {
 body .adminPage {
   font-family: 'Droid Sans';
   font-size: 15px; }
-
-h2 {
-  font-family: 'star_jediregular';
-  font-size: 50px;
-  letter-spacing: 1px; }
-
-.appLogo {
-  background: url("/public/img/logo.png") no-repeat center center;
-  width: 256px;
-  height: 100px;
-  text-indent: -9000px;
-  background-size: 100%;
-  margin: 0; }
-  .appLogo.ac {
-    margin: 0 auto; }
-  .appLogo a {
-    display: block;
-    height: 100px; }
-
-.layoutMode {
-  border: solid 2px #44d5dd;
-  border-width: 3px 3px 0 3px;
-  border-radius: 4px 4px 0 0;
-  float: right;
-  position: relative;
-  z-index: 9;
-  margin-top: -20px; }
-
-.layoutBtn {
-  color: #fff;
-  text-decoration: none;
-  font-family: 'Droid Sans';
-  font-size: 17px;
-  text-transform: uppercase;
-  line-height: 42px;
-  display: inline-block;
-  padding: 0 20px;
-  letter-spacing: -0.005em;
-  min-width: 125px;
-  /*background: url("../img/boardIcon_white_small.png") no-repeat 7px center;*/
-  float: left;
-  box-shadow: inset 0 -10px 10px -4px rgba(0, 0, 0, 0.5); }
-  .layoutBtn:hover {
-    color: #fff;
-    background-color: rgba(68, 213, 221, 0.33); }
-  .layoutBtn.list {
-    /*background-image: url("../img/listIcon_white_small.png");
-        padding-left: 38px;*/ }
-  .layoutBtn.active {
-    background-color: #44d5dd;
-    box-shadow: none;
-    color: #000;
-    cursor: default;
-    /*&.board {
-            background-image: url("../img/boardIcon_black_small.png");
-        }
-        &.list {
-            background-image: url("../img/listIcon_black_small.png");
-        }*/ }
-  .layoutBtn .badges_types_icon > * {
-    width: 33%;
-    float: left;
-    margin-bottom: 20px; }
-    .layoutBtn .badges_types_icon > *:nth-child(3n+1) {
-      clear: both; }
-    .layoutBtn .badges_types_icon > * .iconWrap:before {
-      background-image: url("../public/img/badges_types.png");
-      background-size: 275px;
-      width: 32px;
-      height: 32px; }
-    .layoutBtn .badges_types_icon > *[class^="social_booster"] .iconWrap:before {
-      background-position: 0 0; }
-    .layoutBtn .badges_types_icon > *[class^="headhunter"] .iconWrap:before {
-      background-position: -35px 0; }
-    .layoutBtn .badges_types_icon > *[class^="teammate"] .iconWrap:before {
-      background-position: -69px 0; }
-    .layoutBtn .badges_types_icon > *[class^="plogger"] .iconWrap:before {
-      background-position: -99px 0; }
-    .layoutBtn .badges_types_icon > *[class^="scholar"] .iconWrap:before {
-      background-position: -136px 0; }
-    .layoutBtn .badges_types_icon > *[class^="evangelist"] .iconWrap:before {
-      background-position: -170px 0; }
-    .layoutBtn .badges_types_icon > *[class^="force"] .iconWrap:before {
-      background-position: -205px 0; }
-    .layoutBtn .badges_types_icon > *[class^="player"] .iconWrap:before {
-      background-position: -242px 0; }
