@@ -10,6 +10,8 @@ include_once '../lib/controller/BadgesBoardCtrl.php';
 
 include_once '../lib/model/Badge.php';
 
+include_once '../lib/common/UtilsService.php';
+
 /**
  * Enable CORS
  */
@@ -33,23 +35,23 @@ $configuration = [
       'displayErrorDetails' => true,
    ],
 ];
-$config = new \Slim\Container($configuration);
+//$config = new \Slim\Container($configuration);
 
-$app = new \Slim\App($config);
+$app = new \Slim\Slim($configuration);
 
-$app->get('/leaderboard', function (Request $request, Response $response) {
+$app->get('/leaderboard', function ()  use ($app) {
    $userCtrl = new UserController();
    $leaderBoard = $userCtrl->getUserRanking();
 
-   $response->getbody()->write(json_encode($leaderBoard));
+   $app->response->write(json_encode($leaderBoard));
 
 });
 
-$app->get('/badgesboard', function (Request $request, Response $response) {
+$app->get('/badgesboard', function ()   use ($app) {
    $badgesBoardCtrl = new BadgesBoardCtrl();
    $badgesBoard = $badgesBoardCtrl->getBadgesBoard();
 
-   $response->getbody()->write(json_encode($badgesBoard));
+   $app->response->write(json_encode($badgesBoard));
 
 });
 

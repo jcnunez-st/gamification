@@ -64,9 +64,40 @@ class UserController
 
    private function generateUserPhotoName($name, $lastName)
    {
-      $userPhotoName = strtolower(substr($name, 0, 1) . $lastName . '.jpg');
-      $userPhotoName = iconv('ISO-8859-1', 'ASCII//TRANSLIT', $userPhotoName);
+      $name =  UtilsService::cleanSpecialCharacters($name);
+      $lastName =  UtilsService::cleanSpecialCharacters($lastName);
+      $formattedName = $this->generateFormattedName($name);
+      $formattedLastName = $this->generateFormattedLastName($lastName);
+      $userPhotoName = strtolower($formattedName . $formattedLastName . '.jpg');
+      $userPhotoName = utf8_decode($userPhotoName);
 
       return $userPhotoName;
+   }
+
+   private function generateFormattedName($name)
+   {
+      $splitName = explode(" ", $name);
+      
+      $name = implode(array_map(function ($word) {
+         if ($word) {
+            return $word[0];
+         }
+      }, $splitName));
+
+      return $name;
+   }
+
+
+   private function generateFormattedLastName($lastName)
+   {
+      $splitLastName = explode(" ", $lastName);
+
+      // get first letter of the first last name
+      $formattedLastName = $splitLastName[0];
+      // add the second last name if there is
+      if (count($splitLastName) > 1) {
+         $formattedLastName = $formattedLastName . $splitLastName[1][0];
+      }
+      return $formattedLastName;
    }
 }

@@ -1,7 +1,8 @@
 <?php
 
 define('APPLICATION_NAME', 'Stratio gamification');
-define('CREDENTIALS_PATH', '~/.credentials/stratio-gamification.json');
+define('CREDENTIALS_PATH', '/etc/stratio/gamification/stratio-gamification.json');
+define('CLIENT_SECRET_PATH',  '/etc/stratio/gamification/client_secret.json');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/stratio-gamification.json
@@ -18,15 +19,14 @@ class GoogleClientCtrl
       $client = new Google_Client();
       $client->setApplicationName(APPLICATION_NAME);
       $client->setScopes(SCOPES);
-      $credentials = getenv('CD_CREDENTIALS');
-      file_put_contents(getenv("HOMEPATH") . "/client_secret.json", $credentials);
-      $client->setAuthConfigFile(getenv("HOMEPATH") . "/client_secret.json");
+      $client->setAuthConfigFile(CLIENT_SECRET_PATH);
       $client->setAccessType('offline');
 
       // Load previously authorized credentials from a file.
       $credentialsPath = $this->expandHomeDirectory(CREDENTIALS_PATH);
       if (file_exists($credentialsPath)) {
          $accessToken = file_get_contents($credentialsPath);
+
          $client->setAccessToken($accessToken);
 
          // Refresh the token if it's expired.
