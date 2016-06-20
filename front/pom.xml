@@ -77,31 +77,8 @@
                             <arguments>install --production --no-optional</arguments>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>bower install</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <executable>bower</executable>
-                            <arguments>
-                                <argument>install</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
+
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/*.jar</exclude>
-                    </excludes>
-                    <includes>
-                        <include>front/**/*.*</include>
-                    </includes>
-                    <classesDirectory>target/classes</classesDirectory>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -126,15 +103,36 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>grunt-serve</id>
+                                <id>bower install</id>
+                                <goals>
+                                    <goal>bower</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>install --allow-root</arguments>
+                                    <skip.bower>${skip.bower}</skip.bower>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>grunt-build</id>
                                 <goals>
                                     <goal>grunt</goal>
                                 </goals>
                                 <phase>generate-resources</phase>
                                 <configuration>
-                                    <arguments>serve</arguments>
+                                    <arguments>build</arguments>
                                 </configuration>
                             </execution>
+                            <!--<execution>-->
+                                <!--<id>grunt-serve</id>-->
+                                <!--<goals>-->
+                                    <!--<goal>grunt</goal>-->
+                                <!--</goals>-->
+                                <!--<phase>generate-resources</phase>-->
+                                <!--<configuration>-->
+                                    <!--<arguments>serve</arguments>-->
+                                <!--</configuration>-->
+                            <!--</execution>-->
                         </executions>
                     </plugin>
                 </plugins>

@@ -1,13 +1,12 @@
 <dom-module id="user-card">
     <link rel="import" type="css" href="user-card.css">
     <template>
-        <div class="extraInfo">
-
-            <img class="profilePic" src="/photos/[[user.photo]]">
+        <div class$="extraInfo [[orientation]]" >
+            <img class="profilePic" src="{{photoUrl}}/[[user.photo]]">
             <div class="cardInfo">
                 <p class="fullName ellipsis">[[user.name]] [[user.lastName]]</p>
                 <span class="points">[[user.coins]]</span>
-                <badge-list class ="badgeListTemplate" badges=[[user.badges]] icon-color = 'gray'></badge-list>
+                <badge-list class ="badgeListTemplate" badges=[[user.badges]] icon-color = 'light-gray'></badge-list>
             </div>
         </div>
     </template>
@@ -15,7 +14,8 @@
         Polymer({
             is: 'user-card',
             properties: {
-                user: Object
+                user: Object,
+                photoUrl: String
             },
 
             ready: function() {

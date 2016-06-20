@@ -10,11 +10,10 @@
     "bower_components"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0",
+    "polymer": "Polymer/polymer#^1.5.0",
     "iron-location": "PolymerElements/iron-location#^0.8.1",
     "iron-ajax": "PolymerElements/iron-ajax#^1.2.0",
     "app-route": "PolymerElements/app-route#^0.9.1",
-    "iron-pages": "PolymerElements/iron-pages#^1.0.7",
-    "install": "^1.0.4"
+    "iron-pages": "PolymerElements/iron-pages#^1.0.7"
   }
 }

@@ -9,6 +9,7 @@
                 debounce-duration="300">
         </iron-ajax>
 
+        <loading-page show="{{showLoadingPage}}"></loading-page>
         <div class="row">
             <div class="g-12 column ntp">
                 <div class="startWraScrollPanel">
@@ -24,7 +25,7 @@
                         <span class="points">[[user.coins]]
                             <span class="text">points</span>
                          </span>
-                                <badge-list badges=[[user.badges]]></badge-list>
+                                <badge-list badges=[[user.badges]] icon-color="black"></badge-list>
 
                             </article>
                         </template>
@@ -41,13 +42,14 @@
                 users: {type: Array, value: []}
             },
 
-            ready: function() {
-
+            ready: function () {
+                this.showLoadingPage = true;
             },
-            handleResponse: function(response) {
+            handleResponse: function (response) {
                 this.users = response.detail.response;
+                this.showLoadingPage = false;
             },
-            getPosition: function(index) {
+            getPosition: function (index) {
                 return index + 1;
             }
 

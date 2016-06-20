@@ -1,0 +1,6 @@
+{
+  "api":{
+    "protocol": "http",
+    "ip": "olympiad.stratio.com/api/public"
+  }
+}

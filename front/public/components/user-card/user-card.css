@@ -9,14 +9,21 @@
     left: auto;
 }
 
-.extraInfo {
-    min-width: 300px;
-    margin-top: -40px;
-    margin-left: 30px;
+.extraInfo.left {
+    margin-left: -158px !important;
+}
+
+.extraInfo.right {
+    margin-left: 30px !important;
 }
 
 .extraInfo {
     min-width: 300px;
+    margin-top: -40px;
+}
+
+.extraInfo {
+    min-width: 336px;
 }
 
 .extraInfo .profilePic {
@@ -27,7 +34,6 @@
 }
 
 .extraInfo .cardInfo {
-    margin-left: 100px;
     padding-top: 5px;
 }
 
@@ -60,4 +66,11 @@
 
 .extraInfo .cardInfo .badges {
     margin-right: 15px;
+}
+
+.profilePic {
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    width: 39px;
+    height: 39px;
 }

@@ -1,7 +1,13 @@
 <dom-module id="app-gamification">
     <link rel="import" type="css" href="app-gamification.css">
     <template>
-
+        <iron-ajax
+                auto
+                url="/config/config.json"
+                handle-as="json"
+                on-response="handleConfigResponse"
+                debounce-duration="300">
+        </iron-ajax>
         <app-location route="{{route}}" use-hash-as-path></app-location>
 
         <app-route
@@ -16,7 +22,7 @@
 
             <div class="row nm">
                 <div class="g-12 column nbp">
-                    <h2 class="appLogo">      <a href="/#/home" on-mouseover="playSound" sound-name='harpSound'>War Games
+                    <h2 class="appLogo"><a href="/#/home" on-mouseover="playSound" sound-name='harpSound'>War Games
                         Board</a></h2>
                     <page-tabs current-page-id="{{data.page}}" tabs="{{tabs}}"
                                hidden$="{{!showTabSwitcher}}"></page-tabs>
@@ -25,9 +31,8 @@
             </div>
             <iron-pages attr-for-selected="id" selected="{{data.page}}">
                 <home-page id="home"></home-page>
-                <!-- PENDING TO CREATE BACK URL VAR -->
-                <leader-board id="leaderboard" backend-url='http://172.19.1.67:9090/leaderboard'></leader-board>
-                <badges-board id="badgesboard" backend-url='http://172.19.1.67:9090/badgesboard'></badges-board>
+                <leader-board id="leaderboard" backend-url='{{leaderBoardUrl}}'></leader-board>
+                <badges-board id="badgesboard" backend-url='{{badgesBoardUrl}}' photo-url="{{apiUrl}}/players"></badges-board>
             </iron-pages>
         </div>
         <audio id="harpSound" controls preload="auto" class="hidden">
@@ -74,6 +79,13 @@
                     this.set('route.path', '/home');
                 }
                 this.showTabSwitcher = (this.route.path != "/home");
+            },
+            handleConfigResponse: function (response) {
+                var apiConfig = response.detail.response.api;
+
+                this.apiUrl = apiConfig.protocol + "://" + apiConfig.ip;
+                this.leaderBoardUrl = this.apiUrl + "/leaderboard";
+                this.badgesBoardUrl = this.apiUrl + "/badgesboard";
             }
 
         });

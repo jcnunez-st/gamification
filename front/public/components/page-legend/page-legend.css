@@ -192,35 +192,35 @@
     height: 32px;
 }
 
-.badges_types_icon > *[class^="social_booster"] .iconWrap:before {
+.badges_types_icon > *[class^="apostle"] .iconWrap:before {
     background-position: 0 0;
 }
 
-.badges_types_icon > *[class^="headhunter"] .iconWrap:before {
+.badges_types_icon > *[class^="mentor"] .iconWrap:before {
     background-position: -35px 0;
 }
 
-.badges_types_icon > *[class^="teammate"] .iconWrap:before {
+.badges_types_icon > *[class^="philantropist"] .iconWrap:before {
     background-position: -69px 0;
 }
 
-.badges_types_icon > *[class^="plogger"] .iconWrap:before {
+.badges_types_icon > *[class^="typographist"] .iconWrap:before {
     background-position: -99px 0;
 }
 
-.badges_types_icon > *[class^="scholar"] .iconWrap:before {
+.badges_types_icon > *[class^="academic"] .iconWrap:before {
     background-position: -136px 0;
 }
 
-.badges_types_icon > *[class^="evangelist"] .iconWrap:before {
+.badges_types_icon > *[class^="pedagogue"] .iconWrap:before {
     background-position: -170px 0;
 }
 
-.badges_types_icon > *[class^="force"] .iconWrap:before {
+.badges_types_icon > *[class^="periscoper"] .iconWrap:before {
     background-position: -205px 0;
 }
 
-.badges_types_icon > *[class^="player"] .iconWrap:before {
+.badges_types_icon > *[class^="athlete"] .iconWrap:before {
     background-position: -242px 0;
 }
 
@@ -235,7 +235,7 @@
 }
 
 #pageLegendContent.show {
-    max-height: 700px;
+    max-height: 850px;
 }
 
 #pageLegendContent.hide {
