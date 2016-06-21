@@ -2,17 +2,15 @@
 
 class UserController
 {
-   var $service;
-
    function __construct()
    {
-      $clientCtrl = new GoogleClientCtrl();
-      $this->service = new Google_Service_Sheets($clientCtrl->getClient());
+      $this->clientCtrl = new GoogleClientCtrl();
+      $this->service = new Google_Service_Sheets($this->clientCtrl->getClient());
    }
 
    function getUserRanking()
    {
-      $spreadsheetId = "1iaukST7nZrJCxKNEIYx0Zy5K5eROzWd6hnugR2mynoo";
+      $spreadsheetId = $this->clientCtrl->getSpreadSheetId();
       $range = "Leaderboard!A2:E";
 
       $response = $this->service->spreadsheets_values->get($spreadsheetId, $range);
@@ -25,11 +23,8 @@ class UserController
          return strnatcmp($b->coins, $a->coins);
       });
 
-      $usersArray = array();
-      foreach ($users as $user) {
-         array_push($usersArray, $user);
-      }
-
+      $usersArray = UtilsService::convertJsonToArray($users);
+      
       return $usersArray;
    }
 
@@ -64,8 +59,8 @@ class UserController
 
    private function generateUserPhotoName($name, $lastName)
    {
-      $name =  UtilsService::cleanSpecialCharacters($name);
-      $lastName =  UtilsService::cleanSpecialCharacters($lastName);
+      $name = UtilsService::cleanSpecialCharacters($name);
+      $lastName = UtilsService::cleanSpecialCharacters($lastName);
       $formattedName = $this->generateFormattedName($name);
       $formattedLastName = $this->generateFormattedLastName($lastName);
       $userPhotoName = strtolower($formattedName . $formattedLastName . '.jpg');
@@ -77,7 +72,7 @@ class UserController
    private function generateFormattedName($name)
    {
       $splitName = explode(" ", $name);
-      
+
       $name = implode(array_map(function ($word) {
          if ($word) {
             return $word[0];
@@ -86,7 +81,6 @@ class UserController
 
       return $name;
    }
-
 
    private function generateFormattedLastName($lastName)
    {

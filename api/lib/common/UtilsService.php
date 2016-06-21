@@ -3,7 +3,7 @@
 class UtilsService
 {
 
-   static  function cleanSpecialCharacters($String)
+   static function cleanSpecialCharacters($String)
    {
       $String = str_replace(array('á', 'à', 'â', 'ã', 'ª', 'ä'), "a", $String);
       $String = str_replace(array('Á', 'À', 'Â', 'Ã', 'Ä'), "A", $String);
@@ -36,6 +36,21 @@ class UtilsService
       return $String;
    }
 
+
+   static function getFormattedKey($key)
+   {
+      return trim(strtolower($key));
+   }
+
+   static function convertJsonToArray($json)
+   {
+      $array = array();
+      foreach ($json as $attribute) {
+         array_push($array, $attribute);
+      }
+
+      return $array;
+   }
 }
 
 ?>

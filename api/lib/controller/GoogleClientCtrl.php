@@ -2,7 +2,8 @@
 
 define('APPLICATION_NAME', 'Stratio gamification');
 define('CREDENTIALS_PATH', '/etc/stratio/gamification/stratio-gamification.json');
-define('CLIENT_SECRET_PATH',  '/etc/stratio/gamification/client_secret.json');
+define('CLIENT_SECRET_PATH', '/etc/stratio/gamification/client_secret.json');
+define('SPREADSHEET_CONFIG', '/etc/stratio/gamification/spreadSheet.json');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/stratio-gamification.json
@@ -12,31 +13,47 @@ define('SCOPES', implode(' ', array(
 
 class GoogleClientCtrl
 {
-   var $client;
+   function __construct()
+   {
+      $this->client = null;
+      $this->spreadSheetId = null;
+   }
 
    function getClient()
    {
-      $client = new Google_Client();
-      $client->setApplicationName(APPLICATION_NAME);
-      $client->setScopes(SCOPES);
-      $client->setAuthConfigFile(CLIENT_SECRET_PATH);
-      $client->setAccessType('offline');
+      if (!$this->client) {
+         $this->client = new Google_Client();
+         $this->client->setApplicationName(APPLICATION_NAME);
+         $this->client->setScopes(SCOPES);
+         $this->client->setAuthConfigFile(CLIENT_SECRET_PATH);
+         $this->client->setAccessType('offline');
 
-      // Load previously authorized credentials from a file.
-      $credentialsPath = $this->expandHomeDirectory(CREDENTIALS_PATH);
-      if (file_exists($credentialsPath)) {
-         $accessToken = file_get_contents($credentialsPath);
+         // Load previously authorized credentials from a file.
+         $credentialsPath = $this->expandHomeDirectory(CREDENTIALS_PATH);
+         if (file_exists($credentialsPath)) {
+            $accessToken = file_get_contents($credentialsPath);
 
-         $client->setAccessToken($accessToken);
+            $this->client->setAccessToken($accessToken);
 
-         // Refresh the token if it's expired.
-         if ($client->isAccessTokenExpired()) {
-            $client->refreshToken($client->getRefreshToken());
-            file_put_contents($credentialsPath, $client->getAccessToken());
+            // Refresh the token if it's expired.
+            if ($this->client->isAccessTokenExpired()) {
+               $this->client->refreshToken($this->client->getRefreshToken());
+               file_put_contents($credentialsPath, $this->client->getAccessToken());
+            }
          }
       }
+      return $this->client;
+   }
 
-      return $client;
+   function getSpreadSheetId()
+   {
+      if (!$this->spreadSheetId) {
+         $string = file_get_contents(SPREADSHEET_CONFIG);
+         $spreadSheetConfig = json_decode($string, true);
+         $this->spreadSheetId = $spreadSheetConfig['id'];
+      }
+
+      return $this->spreadSheetId;
    }
 
    function generateCredentials()
