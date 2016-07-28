@@ -31,7 +31,7 @@
             </div>
             <iron-pages attr-for-selected="id" selected="{{data.page}}">
                 <home-page id="home"></home-page>
-                <leader-board id="leaderboard" backend-url='{{leaderBoardUrl}}'></leader-board>
+                <leader-board id="leaderboard" backend-url='{{leaderBoardUrl}}' photo-url="{{apiUrl}}/players"></leader-board>
                 <badges-board id="badgesboard" backend-url='{{badgesBoardUrl}}' photo-url="{{apiUrl}}/players"></badges-board>
             </iron-pages>
         </div>

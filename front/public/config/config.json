@@ -1,6 +1,6 @@
 {
   "api":{
     "protocol": "http",
-    "ip": "olympiad.stratio.com/api/public"
+    "ip": "localhost:9090"
   }
 }

@@ -18,6 +18,7 @@
                         <template is="dom-repeat" items="{{users}}" as="user">
                             <article class="item clearfix">
                                 <span class="position">[[getPosition(index) ]]</span>
+                                <img class="profilePic" src="{{photoUrl}}/[[user.photo]]">
                                 <p class="person">
                                     <strong>[[user.name]]</strong>
                                     <span>[[user.lastName]]</span>
@@ -39,6 +40,7 @@
             is: 'leader-board',
             properties: {
                 backendUrl: String,
+                photoUrl: String,
                 users: {type: Array, value: []}
             },
 
