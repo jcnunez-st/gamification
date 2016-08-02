@@ -7,8 +7,8 @@ ul.badgesList li {
     position: relative;
     width: 50px;
     height: 50px;
-    background: #000 url("../../img/badges.png") no-repeat 0 0;
-    background-size: 500px; }
+    background-size: 400px;
+}
 ul.badgesList li[class^="hoplite"] {
     background-color: transparent;
     background-position: 0 0; }
@@ -34,49 +34,34 @@ ul.badgesList li .badgeType {
     opacity: .7;
 }
 
-.badgeType.orange{
-    background: url("../../img/badges_types_orange.png") no-repeat 0 0;
+.badgeType.pokeball {
+    background-size: auto 100%;
+    background: url("../../img/badges/pokeball.png") no-repeat 0 0;
 }
 
-.badgeType.gray{
-    background: url("../../img/badges_types_gray.png") no-repeat 0 0;
+.badgeType.level-1 {
+    background: url("../../img/badges/level-1.png") no-repeat 0 0;
 }
 
-.badgeType.light-gray{
-    background: url("../../img/badges_types_light_gray.png") no-repeat 0 0;
+.badgeType.level-2 {
+    background: url("../../img/badges/level-2.png") no-repeat 0 0;
 }
 
-.badgeType.black{
-    background: url("../../img/badges_types_black.png") no-repeat 0 0;
+.badgeType.level-3 {
+    background: url("../../img/badges/level-3.png") no-repeat 0 0;
 }
 
-ul.badgesList li .badgeType.apostle {
+.badgeType.water {
     background-position: 0 0; }
-ul.badgesList li .badgeType.mentor {
-    top: 8px;
-    right: -4px;
-    background-position: -22px 0; }
-ul.badgesList li .badgeType.philantropist {
-    top: 24px;
-    right: -10px;
-    background-position: -45px 0; }
-ul.badgesList li .badgeType.typographist {
-    top: 37px;
-    right: 3px;
-    background-position: -61px 0; }
-ul.badgesList li .badgeType.academic {
-    top: 24px;
-    right: 32px;
-    background-position: -87px 0; }
-ul.badgesList li .badgeType.pedagogue {
-    top: 6px;
-    right: 30px;
-    background-position: -109px 0; }
-ul.badgesList li .badgeType.periscoper {
-    top: -5px;
-    right: 19px;
-    background-position: -131px 0; }
-ul.badgesList li .badgeType.athlete {
-    top: -5px;
-    right: 5px;
-    background-position: -153px 0; }
+.badgeType.plant {
+    background-position: -57px 0; }
+.badgeType.fire {
+    background-position: -114px 0; }
+.badgeType.rock {
+    background-position: -171px 0; }
+.badgeType.ground {
+    background-position: -228px 0; }
+.badgeType.electric {
+    background-position: -285px 0; }
+.badgeType.dragon {
+    background-position: -342px 0; }

@@ -3,11 +3,9 @@
     <template>
         <ul class="badges badgesList">
             <template is="dom-repeat" items="{{badges}}" as="badge">
-                <li class$="[[generateClass(badge.level)]]" title="[[badge.level]]">
-                    <template is="dom-repeat" items="{{badge.categories}}" as="category">
-                        <span class$="badgeType [[generateClass(category)]] [[iconColor]]" title="[[category]]"></span>
-                    </template>
-                </li>
+                <template is="dom-repeat" items="{{badge.categories}}" as="category">
+                    <li class$="badgeType [[generateClass(badge.level)]] [[generateClass(category)]]" title="[[category]] [[badge.level]]"></li>
+                </template>
             </template>
         </ul>
     </template>

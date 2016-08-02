@@ -1,11 +1,11 @@
 .appLogo {
     background: url('../../img/logo.png') no-repeat center center;
     width: 256px;
-    height: 100px;
+    height: 172px;
     text-indent: -9000px;
     background-size: 100%;
     margin: 0;
-    margin-bottom: 28px;
+    margin-bottom: -30px;
 }
 .appLogo.ac {
      margin: 0 auto;

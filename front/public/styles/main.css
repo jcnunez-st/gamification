@@ -37,7 +37,8 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -1363,6 +1364,13 @@ pre {
   src: url("../font/lithosproblack.eot?#iefix") format("embedded-opentype"), url("../font/lithosproblack.woff2") format("woff2"), url("../font/lithosproblack.woff") format("woff"), url("../font/lithosproblack.ttf") format("truetype"), url("../font/lithosproblack.svg#lithosproblack") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+@font-face {
+  font-family: 'gothamRnd';
+  src: url("../font/GothamRnd-Bold.otf");
+  font-weight: normal;
+  font-style: normal; }
+
 
 .panel {
   background: #f4f4f4;

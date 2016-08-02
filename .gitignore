@@ -5,3 +5,8 @@
 /front/node_modules
 /front/bower_components
 /front/node
+/front/public/bower_components
+
+# OS metadata
+.DS_Store
+Thumbs.db

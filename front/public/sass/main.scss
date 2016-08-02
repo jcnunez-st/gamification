@@ -6,6 +6,11 @@
     src: url("../font/lithosproblack.eot?#iefix") format("embedded-opentype"), url("../font/lithosproblack.woff2") format("woff2"), url("../font/lithosproblack.woff") format("woff"), url("../font/lithosproblack.ttf") format("truetype"), url("../font/lithosproblack.svg#lithosproblack") format("svg");
     font-weight: normal;
     font-style: normal; }
+@font-face {
+    font-family: 'gothamRnd';
+    src: url("../font/GothamRnd-Bold.otf");
+    font-weight: normal;
+    font-style: normal; }
 .panel {
     background: #f4f4f4;
     background-color: rgba(209, 209, 209, 0.33);
@@ -37,6 +42,3 @@ h2 {
 body .adminPage {
     font-family: 'Droid Sans';
     font-size: 15px; }
-
-
-

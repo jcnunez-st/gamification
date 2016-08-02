@@ -3,7 +3,7 @@
     <template>
         <iron-ajax
                 auto
-                url="/config/config.json"
+                url="../../config/config.json"
                 handle-as="json"
                 on-response="handleConfigResponse"
                 debounce-duration="300">
@@ -22,23 +22,22 @@
 
             <div class="row nm">
                 <div class="g-12 column nbp">
-                    <h2 class="appLogo"><a href="/#/home" on-mouseover="playSound" sound-name='harpSound'>War Games
-                        Board</a></h2>
-                    <page-tabs current-page-id="{{data.page}}" tabs="{{tabs}}"
-                               hidden$="{{!showTabSwitcher}}"></page-tabs>
+                    <h2 class="appLogo"><a href="/#/home">Pokemon League</a></h2>
+                    <!-- <page-tabs current-page-id="{{data.page}}" tabs="{{tabs}}"
+                               hidden$="{{!showTabSwitcher}}"></page-tabs> -->
                     <page-legend></page-legend>
                 </div>
             </div>
             <iron-pages attr-for-selected="id" selected="{{data.page}}">
                 <home-page id="home"></home-page>
                 <leader-board id="leaderboard" backend-url='{{leaderBoardUrl}}' photo-url="{{apiUrl}}/players"></leader-board>
-                <badges-board id="badgesboard" backend-url='{{badgesBoardUrl}}' photo-url="{{apiUrl}}/players"></badges-board>
+                <!-- <badges-board id="badgesboard" backend-url='{{badgesBoardUrl}}' photo-url="{{apiUrl}}/players"></badges-board> -->
             </iron-pages>
         </div>
-        <audio id="harpSound" controls preload="auto" class="hidden">
+        <!-- <audio id="harpSound" controls preload="auto" class="hidden">
             <source src="../../audio/harp.mp3" controls/>
             <source src="../../audio/harp.ogg" controls/>
-        </audio>
+        </audio> -->
     </template>
 
     <script>

@@ -26,7 +26,7 @@
     font-size: 14px;
     border: solid 2px #424140;
     border-width: 0 2px 2px 0;
-    background-color: #d8d8d8;
+    background-color: white;
     border-radius: 0 0 3px 0;
     margin-right: 20px;
     padding: 3px 10px 3px 3px;
@@ -48,7 +48,7 @@
 }
 
 .legend .toggleLegend:after {
-    border-right: 41px solid #d8d8d8;
+    border-right: 41px solid white;
     left: -41px;
     top: -3px;
     z-index: 2;
@@ -63,7 +63,7 @@
 .legend .legendContent {
     border: solid 2px #424140;
     border-width: 0 0 2px 0;
-    background-color: #d8d8d8;
+    background-color: white;
     box-shadow: 0 0 90px 10px black;
     position: relative;
     z-index: 1;
@@ -90,6 +90,8 @@
 
 .legend .insideContent {
     padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .badgesIconItems {
@@ -108,38 +110,6 @@
 .badgesIconItems > * .iconWrap {
     width: 50px;
     float: left;
-}
-
-.badgesIconItems > * .iconWrap:before {
-    content: " ";
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url("../../img/badges.png") no-repeat 0 0;
-    background-size: 500px;
-    margin-right: 10px;
-    zoom: 1.6;
-    margin: 0 auto;
-}
-
-.badgesIconItems > *[class^="hoplite"] .iconWrap:before {
-    background-position: 0 0;
-}
-
-.badgesIconItems > *[class^="strategist"] .iconWrap:before {
-    background-position: -53px 0;
-}
-
-.badgesIconItems > *[class^="king"] .iconWrap:before {
-    background-position: -104px;
-}
-
-.badgesIconItems > *[class^="demigod"] .iconWrap:before {
-    background-position: -157px;
-}
-
-.badgesIconItems > *[class^="aphrodite"] .iconWrap:before {
-    background-position: -218px;
 }
 
 .badgesIconItems > * strong {
@@ -171,17 +141,21 @@
     opacity: .7;
 }
 
+.badgesIconItems > * .desc img {
+   margin: 10px auto;
+}
+
 .badgesIconItems.badges_types_characters > * .iconWrap {
     width: 100px;
 }
 
 .badges_types_icon > * {
-    width: 33%;
+    width: 45%;
     float: left;
     margin-bottom: 20px;
 }
 
-.badges_types_icon > *:nth-child(3n+1) {
+.badges_types_icon > *:nth-child(2n+1) {
     clear: both;
 }
 
