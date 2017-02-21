@@ -4,6 +4,7 @@ define('APPLICATION_NAME', 'Stratio gamification');
 define('CREDENTIALS_PATH', '/etc/stratio/gamification/stratio-gamification.json');
 define('CLIENT_SECRET_PATH', '/etc/stratio/gamification/client_secret.json');
 define('SPREADSHEET_CONFIG', '/etc/stratio/gamification/spreadSheet.json');
+define('SHARED_IDS', '/etc/stratio/gamification/shared-ids.json');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/stratio-gamification.json
@@ -11,16 +12,13 @@ define('SCOPES', implode(' ', array(
       Google_Service_Sheets::SPREADSHEETS_READONLY)
 ));
 
-class GoogleClientCtrl
-{
-   function __construct()
-   {
+class GoogleClientCtrl {
+   function __construct() {
       $this->client = null;
       $this->spreadSheetId = null;
    }
 
-   function getClient()
-   {
+   function getClient() {
       if (!$this->client) {
          $this->client = new Google_Client();
          $this->client->setApplicationName(APPLICATION_NAME);
@@ -45,8 +43,7 @@ class GoogleClientCtrl
       return $this->client;
    }
 
-   function getSpreadSheetId()
-   {
+   function getSpreadSheetId() {
       if (!$this->spreadSheetId) {
          $string = file_get_contents(SPREADSHEET_CONFIG);
          $spreadSheetConfig = json_decode($string, true);
@@ -56,8 +53,15 @@ class GoogleClientCtrl
       return $this->spreadSheetId;
    }
 
-   function generateCredentials()
-   {
+   function getSharedIds() {
+      if (!$this->assetsFolder) {
+         $string = file_get_contents(SHARED_IDS);
+         $sharedIdsJson = json_decode($string, true);
+         $this->assetsFolder = $sharedIdsJson['assets'];
+      }
+   }
+
+   function generateCredentials() {
       if (php_sapi_name() != 'cli') {
          throw new Exception('This application must be run on the command line.');
       }
@@ -87,8 +91,7 @@ class GoogleClientCtrl
     * @param string $path the path to expand.
     * @return string the expanded path.
     */
-   function expandHomeDirectory($path)
-   {
+   function expandHomeDirectory($path) {
       $homeDirectory = getenv('HOME');
       if (empty($homeDirectory)) {
          $homeDirectory = getenv("HOMEDRIVE") . getenv("HOMEPATH");

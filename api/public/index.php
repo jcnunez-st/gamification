@@ -4,7 +4,9 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
+require_once '../lib/controller/AssetsCtrl.php';
 require_once '../lib/controller/UserCtrl.php';
+require_once '../lib/controller/LegendCtrl.php';
 include_once '../lib/controller/GoogleClientCtrl.php';
 include_once '../lib/controller/BadgesBoardCtrl.php';
 
@@ -44,7 +46,20 @@ $app->get('/leaderboard', function ()  use ($app) {
    $leaderBoard = $userCtrl->getUserRanking();
 
    $app->response->write(json_encode($leaderBoard));
+});
 
+$app->get('/assets', function ()  use ($app) {
+   $assetsCtrl = new AssetsController();
+   $assets = $assetsCtrl->getAssets();
+
+   $app->response->write(json_encode($assets));
+});
+
+$app->get('/legend', function ()  use ($app) {
+   $legendCtrl = new LegendController();
+   $legend = $legendCtrl->getLegendContent();
+
+   $app->response->write(json_encode($legend));
 });
 
 $app->get('/badgesboard', function ()   use ($app) {
@@ -52,7 +67,6 @@ $app->get('/badgesboard', function ()   use ($app) {
    $badgesBoard = $badgesBoardCtrl->getBadgesBoard();
 
    $app->response->write(json_encode($badgesBoard));
-
 });
 
 
