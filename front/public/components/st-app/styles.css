@@ -1,0 +1,38 @@
+:host {
+   background: #424140 url("../../img/bg.jpg") no-repeat center bottom fixed;
+   background-size: cover;
+   display: block;
+   min-height: 100%;
+   width: 100%;
+}
+
+.pages-container {
+   margin: 0 auto;
+   max-width: 1200px;
+   width: 100%;
+}
+
+.home-link {
+   display: block;
+   margin: 0;
+   padding: 0;
+   width: 128px;
+}
+
+@media only screen and (min-width: 480px) {
+   .home-link {
+      width: 160px;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+   .home-link {
+      width: 192px;
+   }
+}
+
+@media only screen and (min-width: 1140px) {
+   .home-link {
+      width: 256px;
+   }
+}

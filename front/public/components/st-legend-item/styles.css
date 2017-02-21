@@ -1,0 +1,34 @@
+:host {
+   flex-basis: 50%;
+   margin-bottom: 20px;
+   min-width: 480px;
+   padding: 0 0 20px 0;
+}
+
+.iconWrap {
+   width: 40px;
+   float: left;
+   opacity: 0.8;
+}
+
+.desc {
+   margin-left: 60px;
+   margin-right: 20px;
+}
+
+.desc strong {
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.desc p {
+   font-size: 15px;
+   line-height: 1.2em;
+   margin: 0;
+   opacity: .7;
+}
+
+.desc img {
+   margin: 10px auto;
+   max-width: 100%;
+}

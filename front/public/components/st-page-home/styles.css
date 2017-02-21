@@ -1,0 +1,46 @@
+:host {
+   height: 100%;
+   left: 0;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.content {
+   align-items: center;
+   display: flex;
+   height: calc(100% - 70px);
+   justify-content: center;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.content .link-wrapper {
+   display: block;
+   height: 0;
+   padding-bottom: 40%;
+   position: relative;
+   width: 25%;
+}
+
+.content .link {
+   background-position: center left;
+   background-size: 200% auto;
+   content: " ";
+   display: block;
+   height: 100%;
+   left: 0;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.content .link:hover {
+   background-position: center right;
+}
+
+.content .link.leaderboard {
+   background-image: url(../../img/pokedex.png);
+}

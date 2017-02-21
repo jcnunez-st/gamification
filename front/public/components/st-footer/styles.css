@@ -1,0 +1,41 @@
+:host {
+   height: 50px;
+   width: 100%;
+}
+
+@keyframes giftMove {
+   from { left: 100%; }
+   to { left: -100%; }
+}
+
+.gif {
+   animation: giftMove 16s linear infinite;
+   height: 50px;
+   left: -100%;
+   position: absolute;
+}
+
+.gif:nth-child(1) {
+   animation-delay: 0s;
+}
+.gif:nth-child(2) {
+   animation-delay: 2s;
+}
+.gif:nth-child(3) {
+   animation-delay: 4s;
+}
+.gif:nth-child(4) {
+   animation-delay: 6s;
+}
+.gif:nth-child(5) {
+   animation-delay: 8s;
+}
+.gif:nth-child(6) {
+   animation-delay: 10s;
+}
+.gif:nth-child(7) {
+   animation-delay: 12s;
+}
+.gif:nth-child(8) {
+   animation-delay: 14s;
+}

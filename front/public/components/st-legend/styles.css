@@ -1,0 +1,109 @@
+:host {
+   font-family: 'Open Sans', sans-serif;
+   letter-spacing: 0;
+   position: absolute;
+   z-index: 9;
+   top: 0;
+   right: 0;
+   width: 100%;
+}
+
+.toggle-button {
+   background-color: white;
+   border: solid 2px #424140;
+   border-radius: 0 0 3px 0;
+   border-width: 0 2px 2px 0;
+   cursor: pointer;
+   float: right;
+   font-size: 14px;
+   height: 39px;
+   line-height: 1.4em;
+   margin-right: 20px;
+   outline: 0;
+   padding: 3px 10px 3px 3px;
+   position: relative;
+   top: -4px;
+   z-index: 3;
+}
+
+.toggle-button:before, .toggle-button:after {
+   border-bottom: 39px solid transparent;
+   content: " ";
+   display: block;
+   height: 0;
+   position: absolute;
+   top: 0px;
+   width: 0;
+}
+
+.toggle-button:after {
+   border-right: 41px solid white;
+   left: -41px;
+   top: -3px;
+   z-index: 2;
+}
+
+.toggle-button:before {
+   border-right: 40px solid #424140;
+   left: -40px;
+   z-index: 1;
+}
+
+
+#panel {
+   border: solid 2px #424140;
+   border-width: 0 0 2px 0;
+   background-color: white;
+   box-shadow: 0 0 90px 10px black;
+   max-height: 2000px;
+   overflow: hidden;
+   position: relative;
+   transition: max-height 0.65s ease-in-out;
+   top: -2px;
+   z-index: 1;
+
+   -webkit-transition: max-height 0.65s ease-in-out;
+   -moz-transition: max-height 0.65s ease-in-out;
+   -ms-transition: max-height 0.65s ease-in-out;
+   -o-transition: max-height 0.65s ease-in-out;
+}
+
+#panel.hide {
+   max-height: 0;
+}
+
+
+.content {
+   padding: 0 20px;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.content h1 {
+   font-size: 25px;
+   color: #424140;
+   margin-top: 0;
+   margin-bottom: 5px;
+   padding-top: 20px;
+}
+
+.content h3 {
+   font-size: 19px;
+   color: #424140;
+   margin-bottom: 3px;
+}
+
+.content p {
+   font-size: 16px;
+   opacity: .7;
+}
+
+
+.list {
+   align-content: flex-start;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   max-width: 1200px;
+   padding: 0 20px;
+}

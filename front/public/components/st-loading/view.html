@@ -1,0 +1,15 @@
+<dom-module id="st-loading">
+   <link rel="import" type="css" href="styles.css">
+
+   <template>
+      <template is="dom-if" if="{{show}}">
+         <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+         </div>
+      </template>
+   </template>
+
+   <script src="controller.js"></script>
+</dom-module>

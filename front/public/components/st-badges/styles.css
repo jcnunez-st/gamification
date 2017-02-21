@@ -1,0 +1,61 @@
+ul.badgesList {
+   margin: 0;
+   white-space: nowrap;
+}
+ul.badgesList li {
+   display: inline-block;
+   text-indent: -9000px;
+   position: relative;
+   width: 50px;
+   height: 50px;
+   background-size: 400px;
+}
+
+ul.badgesList li .badgeType {
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: -6px;
+   right: 0;
+   background-size: 176px;
+   opacity: .7;
+}
+
+.badgeType.pokeball {
+   background-size: auto 100%;
+   background: url("../../img/badges/pokeball.png") no-repeat 0 0;
+}
+
+.badgeType.level-1 {
+   background: url("../../img/badges/level-1.png") no-repeat 0 0;
+}
+
+.badgeType.level-2 {
+   background: url("../../img/badges/level-2.png") no-repeat 0 0;
+}
+
+.badgeType.level-3 {
+   background: url("../../img/badges/level-3.png") no-repeat 0 0;
+}
+
+.badgeType.water {
+   background-position: 0 0;
+}
+.badgeType.plant {
+   background-position: -57px 0;
+}
+.badgeType.fire {
+   background-position: -114px 0;
+}
+.badgeType.rock {
+   background-position: -171px 0;
+}
+.badgeType.ground {
+   background-position: -228px 0;
+}
+.badgeType.electric {
+   background-position: -285px 0;
+}
+.badgeType.dragon {
+   background-position: -342px 0;
+}

@@ -1,0 +1,13 @@
+<dom-module id="st-badges">
+   <link rel="import" type="css" href="styles.css">
+   <template>
+      <ul class="badges badgesList">
+         <template is="dom-repeat" items="{{badges}}" as="badge">
+            <template is="dom-repeat" items="{{badge.categories}}" as="category">
+               <li class$="badgeType [[generateClass(badge.level)]] [[generateClass(category)]]" title="[[category]] [[badge.level]]"></li>
+            </template>
+         </template>
+      </ul>
+   </template>
+   <script src="controller.js"></script>
+</dom-module>

@@ -1,0 +1,16 @@
+<dom-module id="st-legend-item">
+   <link rel="import" type="css" href="styles.css">
+
+   <template>
+      <div class="iconWrap">
+         <img src="img/{{badge.icon}}" />
+      </div>
+      <div class="desc">
+         <strong>[[badge.title]]</strong>
+         <p>[[badge.desc]]</p>
+         <img src="img/{{badge.img}}" />
+      </div>
+   </template>
+
+   <script src="controller.js"></script>
+</dom-module>

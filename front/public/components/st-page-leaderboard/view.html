@@ -1,0 +1,32 @@
+<dom-module id="st-page-leaderboard">
+   <link rel="import" type="css" href="styles.css">
+
+   <template>
+      <iron-ajax
+            auto="true"
+            handle-as="json"
+            on-response="handler"
+            url="[[url]]">
+      </iron-ajax>
+      <st-loading show="{{showLoading}}"></st-loading>
+
+      <ol class="list">
+         <template is="dom-repeat" items="{{users}}">
+            <li class="item">
+               <!-- <span class="position">{{index+1}}</span> -->
+               <!-- <img class="profilePic" src="{{photoUrl}}/[[user.photo]]"> -->
+               <p class="person">
+                  <strong>[[item.name]]</strong>
+                  <span>[[item.lastName]]</span>
+               </p>
+               <span class="points">[[item.coins]]
+                  <span class="text">points</span>
+               </span>
+               <st-badges badges=[[item.badges]]></st-badges>
+            </li>
+         </template>
+      </ol>
+   </template>
+
+   <script src="controller.js"></script>
+</dom-module>

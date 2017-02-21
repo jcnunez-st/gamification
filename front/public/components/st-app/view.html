@@ -1,0 +1,36 @@
+<dom-module id="st-app">
+   <link rel="import" type="css" href="styles.css">
+
+   <template>
+      <iron-ajax
+            auto
+            url="../../config/config.json"
+            handle-as="json"
+            on-response="configHandler">
+      </iron-ajax>
+
+      <app-location
+            route="{{route}}"
+            use-hash-as-path>
+      </app-location>
+
+      <app-route
+            route="{{route}}"
+            pattern="/:page"
+            data="{{data}}"
+            tail="{{tail}}"
+            active="{{activePage}}">
+      </app-route>
+
+      <st-legend url="{{legendUrl}}"></st-legend>
+      <div class="pages-container">
+         <a href="/#/home" class="home-link"><img src="../../img/logo.png" width="100%" /></a>
+         <iron-pages attr-for-selected="id" selected="{{data.page}}">
+            <st-page-home id="home"></st-page-home>
+            <st-page-leaderboard id="leaderboard" url="{{leaderboardUrl}}" photo-url="{{apiUrl}}/players"></st-page-leaderboard>
+         </iron-pages>
+      </div>
+   </template>
+
+   <script src="controller.js"></script>
+</dom-module>

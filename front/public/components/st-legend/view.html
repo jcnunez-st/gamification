@@ -1,0 +1,30 @@
+<dom-module id="st-legend">
+   <link rel="import" type="css" href="styles.css">
+
+   <template>
+      <iron-ajax
+            auto
+            debounce-duration="300"
+            handle-as="json"
+            on-response="handler"
+            url="[[url]]">
+      </iron-ajax>
+
+      <div id="panel" class="hide">
+         <div class="content">
+            <h1>[[content.title]]</h1>
+            <p>[[content.description]]</p>
+            <h3>[[content.subtitle]]</h3>
+            <p>[[content.subdescription]]</p>
+            <div class="list">
+               <template is="dom-repeat" items="{{content.badges}}">
+                  <st-legend-item badge="{{item}}"></st-legend-item>
+               </template>
+            </div>
+         </div>
+      </div>
+      <button class="toggle-button" on-click="toggleLegend">view legend</button>
+   </template>
+
+   <script src="controller.js"></script>
+</dom-module>
